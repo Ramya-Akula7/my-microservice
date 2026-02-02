@@ -1,7 +1,7 @@
 # ============================================
 # BUILD STAGE
 # ============================================
-FROM maven:3.8.7-openjdk-11 AS builder
+FROM FROM maven:3.8.7-eclipse-temurin-11 AS builder
 
 # Set working directory
 WORKDIR /app
