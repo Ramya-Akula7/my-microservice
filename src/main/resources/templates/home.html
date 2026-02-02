@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Microservice</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .nav { margin: 20px 0; }
+        .nav a { 
+            margin-right: 15px; 
+            color: #0066cc; 
+            text-decoration: none; 
+        }
+        .nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${welcome}">Welcome</h1>
+        <p>This is the server-side rendered page. You can also use the static dashboard.</p>
+        
+        <div class="nav">
+            <a href="/">Static Dashboard</a>
+            <a href="/api/health">API Health Check</a>
+            <a href="/api/messages">View Messages API</a>
+            <a href="/actuator/health">Spring Actuator</a>
+        </div>
+        
+        <h2>Available Endpoints:</h2>
+        <ul>
+            <li><code>GET /</code> - This page</li>
+            <li><code>GET /index.html</code> - Interactive Dashboard</li>
+            <li><code>GET /api/health</code> - Health check</li>
+            <li><code>GET /api/info</code> - Server info</li>
+            <li><code>GET /api/messages</code> - Get all messages</li>
+            <li><code>POST /api/messages</code> - Create message</li>
+            <li><code>GET /actuator/health</code> - Spring Boot Actuator</li>
+        </ul>
+        
+        <h2>Quick Links:</h2>
+        <p><a href="/index.html">👉 Go to Interactive Dashboard</a></p>
+    </div>
+</body>
+</html>

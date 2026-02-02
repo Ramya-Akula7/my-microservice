@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Microservice</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; }
+        .tagline { opacity: 0.9; font-size: 1.1em; }
+        main { padding: 30px; display: grid; gap: 30px; }
+        @media (min-width: 768px) {
+            main { grid-template-columns: 1fr 1fr; }
+        }
+        .card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #4f46e5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .card h2 { color: #4f46e5; margin-bottom: 15px; }
+        .status { 
+            padding: 10px 20px; 
+            border-radius: 50px; 
+            display: inline-block; 
+            font-weight: 600; 
+            margin: 10px 0;
+        }
+        .status.up { background: #d1fae5; color: #065f46; }
+        .form-group { margin: 15px 0; }
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        button:hover { background: #4338ca; transform: translateY(-2px); }
+        #messages { max-height: 300px; overflow-y: auto; }
+        .message-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        .timestamp { color: #64748b; font-size: 0.9em; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f5f9;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🚀 Java Microservice</div>
+            <div class="tagline">Spring Boot + REST API + Frontend</div>
+        </header>
+        
+        <main>
+            <div>
+                <div class="card">
+                    <h2>📊 System Status</h2>
+                    <div id="status" class="status">Checking...</div>
+                    <div id="info"></div>
+                </div>
+                
+                <div class="card">
+                    <h2>💬 Send Message</h2>
+                    <div class="form-group">
+                        <textarea id="messageText" placeholder="Enter your message..." rows="3"></textarea>
+                    </div>
+                    <button onclick="sendMessage()">Send Message</button>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card">
+                    <h2>📨 Messages</h2>
+                    <div id="messages">
+                        <p>No messages yet. Send your first message!</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>⚙️ Quick Actions</h2>
+                    <button onclick="loadMessages()">🔄 Refresh Messages</button>
+                    <button onclick="checkHealth()" style="margin-top: 10px;">❤️ Check Health</button>
+                    <button onclick="viewServerInfo()" style="margin-top: 10px; background: #10b981;">ℹ️ Server Info</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Java Microservice v1.0.0 | Spring Boot | Built with ❤️</p>
+        </footer>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

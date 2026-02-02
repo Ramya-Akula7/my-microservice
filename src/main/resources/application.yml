@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: my-microservice
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: My Microservice
+    version: 1.0.0
+    description: Full-stack Java microservice with frontend
+    
+logging:
+  level:
+    com.example.microservice: INFO
