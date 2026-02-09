@@ -16,8 +16,8 @@ spec:
       imagePullSecrets:
         - name: gar-secret
       containers:
-        - name: my-microservice
-          image: us-central1-docker.pkg.dev/srikarcool1/my-microservice-repo/srikar:latest
+        - name: ramya-app
+          image: <+artifact.image>
           ports:
             - containerPort: 8080
 
