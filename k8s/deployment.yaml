@@ -13,8 +13,6 @@ spec:
       labels:
         app: my-microservice
     spec:
-      imagePullSecrets:
-        - name: gar-secret
       containers:
         - name: ramya-app
           image: <+artifacts.ecr_artifact.image>
