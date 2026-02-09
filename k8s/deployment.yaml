@@ -17,7 +17,7 @@ spec:
         - name: gar-secret
       containers:
         - name: ramya-app
-          image: <+artifact.image>
+          image: <+artifacts.ecr_artifact.image>
           ports:
             - containerPort: 8080
 
